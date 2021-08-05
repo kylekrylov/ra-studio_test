@@ -1,0 +1,23 @@
+.menu {
+   &__list {
+      @media (max-width: $max1140) {
+      }
+      @media (max-width: $max768) {
+      }
+   }
+
+   &__item {
+      &:hover,
+      &:focus,
+      &.active {
+      }
+
+      @media (max-width: $max768) {
+      }
+   }
+
+   &__link {
+      @media (max-width: $max1140) {
+      }
+   }
+}

@@ -1,0 +1,204 @@
+$max1920: 1919.98px;
+$max1280: 1139.98px;
+$max1140: 1139.98px;
+$max991: 990.98px;
+$max768: 767.98px;
+$max600: 599.98px;
+$max425: 424.98px;
+$min320: 320px;
+
+$sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$helvetica: Helvetica, Arial, Lucida, sans-serif;
+
+$fontFamilyActiv: FuturaPT-Book;
+$fontFamilyActivMedium: FuturaPT-Medium;
+$fontFamilyActivBold: FuturaPT-Bold;
+
+$white: #ffffff;
+$whiteLight: #f2f2f2;
+$gold: #a89365;
+$blackLight: #1a1a1a;
+$black: #0c0c0c;
+$grey: #575757;
+
+$pultBlue: #4cc7e9;
+$blue: #2f80ed;
+$blueLight: #8ecae4;
+$pink: #7b61ff;
+
+$colorActiv: #4cc7e9;
+$colorActiv1: #0c0c0c;
+$colorActiv2: #242424;
+
+$transition: all 0.2s ease-in-out;
+$transitionFast: all 0.1s ease-in-out;
+$transitionLate: all 0.3s ease-in-out 0.1s;
+
+* {
+   &::selection {
+      color: $white;
+      background: $pultBlue;
+   }
+   //*scrollbar chrome
+   &::-webkit-scrollbar {
+      width: 8px;
+      background-color: $colorActiv1;
+      &-track {
+         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+         border-radius: 4px;
+         background-color: $colorActiv1;
+      }
+      &-thumb {
+         border-radius: 4px;
+         background-color: $white;
+      }
+   }
+
+   //*scrollbar firefox
+   scrollbar-color: $white $colorActiv1;
+   scrollbar-width: thin;
+}
+
+.body {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   max-width: 1920px;
+   margin: 0 auto;
+   min-height: 100vh;
+   font-family: $fontFamilyActivMedium, $sans;
+}
+
+.book {
+   font-family: $fontFamilyActiv, $sans;
+}
+.medium {
+   font-family: $fontFamilyActivMedium, $sans;
+}
+.bold {
+   font-family: $fontFamilyActivBold, $sans;
+}
+.text {
+   position: relative;
+   font-family: $fontFamilyActiv, $sans;
+   &--triger {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: inherit;
+      color: $colorActiv2;
+      // ? градиент фона для затухания текста за ним.
+      background: linear-gradient(to right, #ffffff00 0%, #ffffff 15%);
+      text-decoration: none;
+      padding: 0px 24px 0px 40px;
+      cursor: pointer;
+      &::before,
+      &::after {
+         position: absolute;
+         right: 0;
+         top: 50%;
+         content: "";
+         transform: translate(-2px, -50%);
+         &:hover
+         // &:focus
+         {
+            background: $colorActiv;
+            border-right: 1px solid $colorActiv;
+            border-bottom: 1px solid $colorActiv;
+         }
+      }
+      &::before {
+         background: $colorActiv2;
+         width: 12px;
+         height: 1px;
+      }
+      &::after {
+         width: 6px;
+         height: 6px;
+         border-right: 1px solid $colorActiv2;
+         border-bottom: 1px solid $colorActiv2;
+         transform: translate(-2px, -50%) rotate(-45deg);
+      }
+      &:hover
+      // &:focus
+      {
+         color: $colorActiv;
+         &::before {
+            background: $colorActiv;
+         }
+         &::after {
+            border-right: 1px solid $colorActiv;
+            border-bottom: 1px solid $colorActiv;
+         }
+      }
+      @media (max-width: $max1140) {
+         font-size: 12px;
+      }
+      @media (max-width: $max768) {
+      }
+   }
+   & .active.text--triger::after {
+      transform: translate(-5px, -100%) rotate(-135deg);
+   }
+   & .active.text--triger::before {
+      transform: translate(-2px, -50%) rotate(-90deg);
+   }
+}
+
+.main {
+   height: 100%;
+   flex: 1 1;
+}
+
+.link {
+   color: inherit;
+   white-space: nowrap;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+}
+.input {
+   border: none;
+   background: inherit;
+   display: flex;
+   align-items: center;
+   &::placeholder {
+      color: inherit;
+      font-size: inherit;
+   }
+}
+
+.wrapper {
+   width: 100%;
+   max-width: 600px;
+   min-width: 320px;
+   margin: 0 auto;
+   // padding: 0 30px;
+   // overflow: hidden;
+   .product & {
+      overflow: visible;
+   }
+   // @media (max-width: $max1920) {
+   //    padding: 0 40px;
+   // }
+   // @media (max-width: $max1280) {
+   //    padding: 0 20px;
+   // }
+   @media (max-width: $max1280) {
+      // padding: 0 24px;
+   }
+   @media (max-width: $max768) {
+      padding: 0 10px;
+   }
+   // @media (max-width: $max600) {
+   //    padding: 0 12px;
+   // }
+   &--intro {
+      // padding: 0;
+   }
+   &--hello {
+      padding: 0;
+   }
+}

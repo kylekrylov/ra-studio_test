@@ -1,0 +1,400 @@
+.section {
+   padding-top: 120px;
+   @media (max-width: $max768) {
+      padding-top: 60px;
+   }
+   &__content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 120px;
+      text-align: center;
+      @media (max-width: $max768) {
+         padding-bottom: 60px;
+      }
+      & > *:not(:last-child) {
+         margin-bottom: 12px;
+      }
+      &:last-child {
+         &::after {
+            position: absolute;
+            bottom: 0;
+            content: "";
+            width: 100%;
+            height: 1px;
+            background: #bcbcbc;
+         }
+      }
+   }
+   &__title,
+   &__texts,
+   &__subtitle {
+      line-height: 130%;
+   }
+   &__title,
+   &__subtitle {
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+   }
+   &__subtitle {
+      color: #bcbcbc;
+      font-size: 14px;
+      @media (max-width: $max768) {
+         font-size: 12px;
+      }
+   }
+   &__title {
+      color: #000;
+      font-size: 32px;
+      font-weight: 500;
+      @media (max-width: $max768) {
+         font-size: 24px;
+      }
+   }
+
+   &__texts {
+      color: #000;
+      font-size: 16px;
+      padding-bottom: 12px;
+      @media (max-width: $max768) {
+         font-size: 12px;
+      }
+   }
+
+   &__text {
+   }
+   &__picture {
+      // width: 100%;
+      // height: 100%;
+   }
+
+   &__btns {
+   }
+   &__descriptions {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      background: #0000001a;
+   }
+}
+.descriptions {
+   top: 0;
+   left: 0;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   & .description {
+      &:nth-child(1) {
+         z-index: 11;
+      }
+   }
+   &--atom {
+      & .description {
+         &:nth-child(1) {
+            top: 19%;
+            right: 14%;
+         }
+         &:nth-child(2) {
+            top: 26%;
+            left: 35%;
+         }
+         &:nth-child(3) {
+            top: 68%;
+            right: 27%;
+         }
+         &:nth-child(4) {
+            top: 89%;
+            right: 33%;
+         }
+         &:nth-child(5) {
+            top: 88%;
+            right: 13%;
+         }
+      }
+   }
+   &--star {
+      & .description {
+         &:nth-child(1) {
+            top: 3%;
+            left: 29%;
+         }
+         &:nth-child(2) {
+            top: 14%;
+            right: 40%;
+         }
+         &:nth-child(3) {
+            top: 45%;
+            right: 28%;
+         }
+         &:nth-child(4) {
+            top: 56%;
+            left: 33%;
+         }
+         &:nth-child(5) {
+            top: 77%;
+            right: 16%;
+         }
+      }
+   }
+   &--nova {
+      & .description {
+         &:nth-child(1) {
+            top: 12%;
+            right: 40%;
+         }
+         &:nth-child(2) {
+            top: 54%;
+            left: 32%;
+         }
+         &:nth-child(3) {
+            top: 58%;
+            right: 19%;
+         }
+         &:nth-child(4) {
+            top: 67%;
+            left: 33%;
+         }
+         &:nth-child(5) {
+            top: 80%;
+            right: 35%;
+         }
+      }
+   }
+   &--core {
+      & .description {
+         &:nth-child(1) {
+            top: 22%;
+            left: 25%;
+         }
+         &:nth-child(2) {
+            top: 26%;
+            right: 32%;
+         }
+         &:nth-child(3) {
+            top: 44%;
+            left: 9%;
+         }
+         &:nth-child(4) {
+            top: 66%;
+            left: 18%;
+         }
+         &:nth-child(5) {
+            top: 83%;
+            left: 46%;
+         }
+      }
+   }
+}
+.description {
+   position: absolute;
+   display: flex;
+   top: 0;
+   left: 0;
+   color: $white;
+   max-width: 50%;
+   &:hover,
+   &:focus {
+      & .description__ball {
+         transform: scale(calc(32 / 30));
+         // transition: $transition;
+         &::after,
+         &::before {
+            filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0));
+            transition: $transitionFast;
+         }
+      }
+   }
+   &__ball {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      z-index: 2;
+      transition: $transition;
+      &::after,
+      &::before {
+         position: absolute;
+         content: "";
+         border-radius: 50%;
+         filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.7));
+         transition: $transitionLate;
+      }
+      &::after {
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         border: 1px solid $white;
+      }
+      &::before {
+         width: 70%;
+         height: 70%;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         background: $white;
+      }
+      @media (max-width: $max768) {
+         transform: scale(0.5);
+      }
+   }
+   &__title {
+      width: max-content;
+      position: absolute;
+      left: 30px;
+      top: -10px;
+      font-size: 16px;
+      font-weight: normal;
+      padding: 15px 15px 15px 49px;
+      margin-left: -40px;
+      z-index: 1;
+      text-align: left;
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #000000cc;
+         backdrop-filter: blur(4px);
+         border-radius: 30px;
+         z-index: -1;
+         @media (max-width: $max1280) {
+         }
+         @media (max-width: $max768) {
+            border-radius: 10px;
+         }
+      }
+      @media (max-width: $max768) {
+         max-width: 160px;
+         border-radius: 10px;
+         font-size: 12px;
+         padding: 8px 10px 8px 30px;
+      }
+      &.hidden {
+         opacity: 0;
+         visibility: hidden;
+      }
+   }
+   &__text {
+      width: max-content;
+      max-width: 260px;
+
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      text-align: left;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1;
+
+      &::before {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: #000000cc;
+         backdrop-filter: blur(4px);
+         border-radius: 10px;
+         z-index: -1;
+      }
+      @media (max-width: $max768) {
+         max-width: 140px;
+         position: absolute;
+         top: 15px;
+         left: 15px;
+         padding: 8px 10px;
+         font-size: 12px;
+      }
+   }
+   &.active {
+      z-index: 11;
+      & .description__text {
+         opacity: 1;
+         visibility: visible;
+         transition: $transition;
+      }
+      & .description__ball {
+         // transform: scale(1);
+         transform: scale(calc(32 / 30));
+         &::after,
+         &::before {
+            filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0));
+         }
+         @media (max-width: $max768) {
+            transform: scale(calc(22 / 30));
+         }
+      }
+   }
+   &--l {
+      & .description__title {
+         right: -10px;
+         left: auto;
+         padding: 15px 50px 15px 15px;
+         @media (max-width: $max1280) {
+            right: auto;
+            left: 30px;
+            padding: 15px 15px 15px 50px;
+            margin-right: -40px;
+         }
+         @media (max-width: $max768) {
+            left: 38px;
+            top: -2px;
+            padding: 8px 10px 8px 30px;
+         }
+      }
+      & .description__text {
+         right: 15px;
+         left: auto;
+         @media (max-width: $max1280) {
+            right: auto;
+            left: 15px;
+         }
+      }
+   }
+   &--r {
+      left: auto;
+      right: 0;
+      & .description__title {
+         left: 30px;
+         right: auto;
+         @media (max-width: $max1280) {
+            left: auto;
+            right: 30px;
+            padding: 15px 50px 15px 15px;
+            margin-right: -40px;
+         }
+         @media (max-width: $max768) {
+            right: 38px;
+            top: -2px;
+            padding: 8px 30px 8px 10px;
+         }
+      }
+      & .description__text {
+         left: 15px;
+         right: auto;
+         @media (max-width: $max1280) {
+            left: auto;
+            right: 15px;
+         }
+      }
+   }
+
+   &--b {
+      & .description__text {
+         top: auto;
+         bottom: 15px;
+      }
+   }
+}

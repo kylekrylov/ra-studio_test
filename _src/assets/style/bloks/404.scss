@@ -1,0 +1,127 @@
+.p-error {
+}
+
+.p-error-404 {
+  padding: 106px 0 139px;
+  background: $color-white;
+  color: $color-black;
+  &-box {
+    max-width: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    & > *:not(:last-child) {
+      margin-bottom: 12px;
+    }
+    &__img {
+      & svg {
+        width: 100%;
+      }
+    }
+    &__row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      & > * {
+        width: calc(50% - 20px);
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+      }
+      @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        & > *:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 130%;
+    }
+    &__title {
+      font-weight: bold;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    &__pomocode {
+      padding: 0.475rem 1.65rem;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      border: 1px solid $color-black;
+    }
+    &__link {
+      padding: 12px 6px;
+      font-size: 16px;
+    }
+  }
+}
+<div class="p-error-404-box">
+   <div class="p-error-404-box__title">
+      страница не найдена
+   </div>
+   <div class="p-error-404-box__img">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 233" fill="none">
+         <g clip-path="url(#clip0)">
+            <g filter="url(#filter0_d)">
+               <path d="M256.614 137.292L274.999 118.907L361.973 205.881C367.049 210.958 367.049 219.189 361.973 224.266C356.896 229.342 348.665 229.342 343.588 224.266L256.614 137.292Z" fill="#333740" />
+               <path d="M256.614 137.292L274.999 118.907L294.798 138.706C299.874 143.783 299.874 152.014 294.798 157.09C289.721 162.167 281.49 162.167 276.413 157.09L256.614 137.292Z" fill="#C0C0C0" />
+               <path d="M276.766 25.9221C308.203 57.3593 308.203 108.329 276.766 139.766C245.329 171.204 194.359 171.204 162.922 139.766C131.485 108.329 131.485 57.3593 162.922 25.9221C194.359 -5.51506 245.329 -5.51506 276.766 25.9221Z" fill="#4CC7E9" />
+               <path fill-rule="evenodd" clip-rule="evenodd" d="M262.624 125.624C286.251 101.997 286.251 63.691 262.624 40.0643C238.997 16.4376 200.691 16.4376 177.064 40.0643C153.438 63.691 153.438 101.997 177.064 125.624C200.691 149.251 238.997 149.251 262.624 125.624ZM276.766 139.766C308.203 108.329 308.203 57.3593 276.766 25.9221C245.329 -5.51506 194.359 -5.51506 162.922 25.9221C131.485 57.3593 131.485 108.329 162.922 139.766C194.359 171.204 245.329 171.204 276.766 139.766Z" fill="#EBEBEB" />
+               <path d="M196.863 33.7003C199.011 35.8482 195.054 43.2879 188.024 50.3173C180.995 57.3468 173.555 61.3041 171.407 59.1562C169.26 57.0083 173.217 49.5686 180.246 42.5392C187.276 35.5097 194.715 31.5524 196.863 33.7003Z" fill="white" />
+            </g>
+            <g filter="url(#filter1_d)">
+               <path d="M77.22 168.3V137.06H0V124.08L67.98 11H111.76V111.54H132.44V137.06H111.76V168.3H77.22ZM35.64 111.54H77.88V37.84L35.64 111.54Z" fill="#4CC7E9" />
+            </g>
+            <g filter="url(#filter2_d)">
+               <path d="M385.22 168.3V137.06H308V124.08L375.98 11H419.76V111.54H440.44V137.06H419.76V168.3H385.22ZM343.64 111.54H385.88V37.84L343.64 111.54Z" fill="#4CC7E9" />
+            </g>
+         </g>
+         <defs>
+            <filter id="filter0_d" x="139.344" y="2.34424" width="229.436" height="227.729" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+               <feFlood flood-opacity="0" result="BackgroundImageFix" />
+               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+               <feOffset dx="3" dy="2" />
+               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+            </filter>
+            <filter id="filter1_d" x="0" y="11" width="135.44" height="159.3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+               <feFlood flood-opacity="0" result="BackgroundImageFix" />
+               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+               <feOffset dx="3" dy="2" />
+               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+            </filter>
+            <filter id="filter2_d" x="308" y="11" width="135.44" height="159.3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+               <feFlood flood-opacity="0" result="BackgroundImageFix" />
+               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+               <feOffset dx="3" dy="2" />
+               <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" />
+               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+            </filter>
+            <clipPath id="clip0">
+               <rect width="440" height="233" fill="white" />
+            </clipPath>
+         </defs>
+      </svg>
+   </div>
+   <div class="p-error-404-box__text">
+      Что-то пошло не так, не расстраивайтесь, дарим вам скидку 5% по промокоду
+   </div>
+   <div class="p-error-404-box__row">
+      <div class="p-error-404-box__pomocode ">
+         промокод
+      </div>
+      <a href="/" class="p-error-404-box__link btn btn-success">
+         Вернуться на главную
+      </a>
+   </div>
+</div>
