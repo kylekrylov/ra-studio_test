@@ -12,7 +12,7 @@ $sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "N
 $helvetica: Helvetica, Arial, Lucida, sans-serif;
 
 $fontFamilyActiv: FuturaPT-Book;
-$fontFamilyActivMedium: FuturaPT-Medium;
+$fontFamilyActivMedium: Montserrat;
 $fontFamilyActivBold: FuturaPT-Bold;
 
 $white: #ffffff;
@@ -31,9 +31,9 @@ $colorActiv: #4cc7e9;
 $colorActiv1: #0c0c0c;
 $colorActiv2: #242424;
 
-$transition: all 0.2s ease-in-out;
+$transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $transitionFast: all 0.1s ease-in-out;
-$transitionLate: all 0.3s ease-in-out 0.1s;
+$transitionLate: all 0.3s ease-in-out 0.3s;
 
 * {
    &::selection {
@@ -172,7 +172,7 @@ $transitionLate: all 0.3s ease-in-out 0.1s;
 
 .wrapper {
    width: 100%;
-   max-width: 600px;
+   max-width: 1600px;
    min-width: 320px;
    margin: 0 auto;
    // padding: 0 30px;

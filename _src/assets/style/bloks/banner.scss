@@ -59,6 +59,25 @@ $heightSldBannerS: calc(100vh);
       display: flex;
       justify-content: center;
       bottom: 0px;
+      position: relative;
+   }
+   &__content {
+      position: absolute;
+      top: 207px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   &__subtitle {
+      margin-top: 30px;
+      font-size: 28px;
+      line-height: 34px;
+      text-align: center;
+      color: #2d2d2d;
    }
    &__control {
       position: absolute;
@@ -67,12 +86,13 @@ $heightSldBannerS: calc(100vh);
       transform: translate(-50%, 0);
       display: flex;
       justify-content: center;
-      width: 100%;
+      // width: 100%;
       max-width: 600px;
-      height: 100%;
+      // height: 100%;
       max-height: 320px;
       z-index: 100;
       & .swiper-pagination-bullet {
+         position: static;
          opacity: 1;
          background: $white;
          width: 8px;
@@ -83,6 +103,47 @@ $heightSldBannerS: calc(100vh);
       }
       & .swiper-pagination-bullet-active {
          background: #00a8d0;
+      }
+      & .swiper-button-next,
+      .swiper-button-prev {
+         position: relative;
+         bottom: 0;
+         transform: translate(0px, 5px);
+         width: 40px;
+         height: 40px;
+         background: #2d2d2d;
+         border-radius: 50%;
+         &::before {
+            content: "";
+            background: $white;
+            height: 2px;
+            width: 20px;
+         }
+         &::after {
+            position: absolute;
+            content: "";
+            height: 10px;
+            width: 10px;
+            border-top: 2px solid $white;
+            border-right: 2px solid $white;
+            // border-radius: 1px;
+         }
+      }
+      & .swiper-button-next {
+         right: auto;
+         margin-left: 30px;
+         &::after {
+            right: 0;
+            transform: rotate(45deg) translate(-8px, 8px);
+         }
+      }
+      & .swiper-button-prev {
+         left: auto;
+         margin-right: 30px;
+         &::after {
+            left: 0;
+            transform: rotate(225deg) translate(-8px, 8px);
+         }
       }
    }
 }

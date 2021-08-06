@@ -7,195 +7,63 @@
    max-width: 1920px;
    margin: 0 auto;
    padding: 20px 40px;
-   color: white;
    background: none;
    z-index: 99;
    background: rgba(255, 255, 255, 0);
    box-shadow: none;
    &.active {
       background: $white;
-      color: $black;
-      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
-      transition: $transitionFast;
-      animation: showBlock 0.5s ease-in-out forwards;
-      @keyframes showBlock {
-         0% {
-            background: none;
-         }
-         100% {
-            background: $white;
-         }
+      transition: background 0.1s ease-in-out;
+      & .header__logo svg {
+         height: 50px;
+         transition: all 0.3s ease-in-out;
       }
-      @keyframes showSvg {
-         0% {
-            fill: #fff;
-         }
-         100% {
-            fill: #000;
-         }
-      }
-   }
-   & .header__menu {
-      @media (max-width: $max768) {
-         color: $black;
-      }
-   }
-   @media (max-width: $max1280) {
-      padding: 20px 24px;
-   }
-   @media (max-width: $max768) {
-      padding: 10px 12px;
    }
    &__wrapper {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: flex-start;
       margin: 0 auto;
       max-width: calc(1920px - 160px * 2);
+      transition: $transitionLate;
    }
 
    &__menu {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 100%;
       max-width: 40%;
-      @media (max-width: $max768) {
-         position: absolute;
-         top: 0;
-         right: 0;
-         left: 0;
-         flex-direction: column;
-         justify-content: space-evenly;
-         height: 100vh;
-         max-width: 100%;
-         padding-top: 56px;
-         background: #ffffff;
-         z-index: 100;
-         opacity: 0;
-         visibility: hidden;
-         transform: translateY(-10%);
-         transition: $transitionFast;
-
-         &.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            transition: $transitionLate;
-         }
-      }
+      width: 100%;
+      padding: 16px 0;
+      font-size: 14px;
+      line-height: 17/14 * 100%;
+      text-decoration: none;
    }
 
    &__menu-link {
-      @media (max-width: $max768) {
-         padding: 10px;
-      }
-   }
-   &__menu-item {
-      position: relative;
+      color: #2d2d2d;
+      font-weight: 500;
       font-size: 14px;
-      font-style: normal;
-      letter-spacing: 0.1em;
+      line-height: 17/14 * 100%;
+      text-decoration: none;
+   }
+   &__contacts {
+      padding: 16px 0;
+      display: flex;
+      text-decoration: none;
+      & > *:not(:last-child) {
+         margin-right: 20px;
+      }
+   }
+   &__tels {
+      font-size: 14px;
+      line-height: 17/14 * 100%;
+   }
+   &__call {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 17/14 * 100%;
       text-transform: uppercase;
-      transition: $transitionFast;
-
-      &::after {
-         position: absolute;
-         bottom: 0;
-         left: 0;
-         content: "";
-         height: 1px;
-         width: 100%;
-         background: $white;
-         opacity: 0;
-         transition: $transitionFast;
-         .header.active & {
-            background: $black;
-         }
-      }
-      &:hover,
-      &:focus {
-         transition: $transitionFast;
-         &::after {
-            opacity: 1;
-         }
-      }
-   }
-   &__link {
-      // width: 100%;
-      // max-width: 50px;
-   }
-   &__btn {
-      @media (max-width: $max768) {
-      }
-   }
-   &__img {
-      @media (max-width: $max768) {
-      }
-   }
-
-   &__img--pult {
-      @media (max-width: $max768) {
-      }
-   }
-   &__menu-burger {
-      display: none;
-      @media (max-width: $max768) {
-         display: flex;
-         width: 50px;
-         height: 50px;
-         justify-content: center;
-         align-items: center;
-      }
-   }
-   &__burger {
-      position: relative;
-      width: 18px;
-      height: 2px;
-      background: $white;
-      display: none;
-      z-index: 101;
-      &::after,
-      &::before {
-         position: absolute;
-         left: 0;
-         content: "";
-         width: 18px;
-         height: 2px;
-         background: $white;
-      }
-      &::before {
-         top: -5px;
-      }
-      &::after {
-         bottom: -5px;
-      }
-      .header__menu-burger.active & {
-         background: none;
-         &::before {
-            background: $black;
-            top: 0px;
-            transform: rotate(45deg);
-            transition: $transition;
-         }
-         &::after {
-            background: $black;
-            bottom: 0px;
-            transform: rotate(-45deg);
-            transition: $transition;
-         }
-      }
-
-      @media (max-width: $max768) {
-         display: block;
-      }
+      color: #00a2ce;
    }
 }
-// @keyframes showBlock {
-//    0% {
-//       opacity: 0;
-//    }
-//    100% {
-//       opacity: 1;
-//    }
-// }

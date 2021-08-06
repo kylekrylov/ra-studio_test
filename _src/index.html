@@ -12,19 +12,80 @@
    @@include("assets/html/header.html",{ })
    @@include("assets/html/banner.html",{ })
    <main class="main">
+      <section class="section our-series">
+         <div class="wrapper">
+            <div class="our-series__header">
+               <div class="our-series__title">
+                  Наши серии
+               </div>
+               <div class="our-series__text">
+                  PLATforma Home– это не просто дома, идеально созданные в заводских условиях по современным технологиям. Это философия жизни в стиле максимального личного комфорта, уюта и благополучия.
+               </div>
+               <a href="/" class="our-series__link-all link">
+                  Смотреть все
+               </a>
+            </div>
+            <div class="our-series__slider our-series-slider swiper-container">
+               <ul class="swiper-wrapper our-series-slider__wrapper">
+                  <li class="swiper-slide our-series-slider__slide">
+                     <div class="our-series-slider__title">
+                        ПАТИО
+                     </div>
+                     <picture class="our-series-slider__picture">
+                        <source loading="lazy" srcset="assets\img\product\our-series0.webp" class="our-series-slider__img" alt="img">
+                        <img loading="lazy" src="assets\img\product\our-series0.jpg" class="our-series-slider__img" alt="img">
+                     </picture>
+                  </li>
+                  <li class="swiper-slide our-series-slider__slide">
+                     <div class="our-series-slider__title">
+                        ЗИГ-ЗАГ
+                     </div>
+                     <picture class="our-series-slider__picture">
+                        <source loading="lazy" srcset="assets\img\product\our-series1.webp" class="our-series-slider__img" alt="img">
+                        <img loading="lazy" src="assets\img\product\our-series1.jpg" class="our-series-slider__img" alt="img">
+                     </picture>
+                  </li>
+                  <li class="swiper-slide our-series-slider__slide">
+                     <div class="our-series-slider__title">
+                        CABIN
+                     </div>
+                     <picture class="our-series-slider__picture">
+                        <source loading="lazy" srcset="assets\img\product\our-series2.webp" class="our-series-slider__img" alt="img">
+                        <img loading="lazy" src="assets\img\product\our-series2.jpg" class="our-series-slider__img" alt="img">
+                     </picture>
+                  </li>
+               </ul>
+               <div class="swiper-pagination"></div>
 
-      <section class="section">
+               <div class="our-series-slider__scrollbar">
+                  <div class="swiper-scrollbar"></div>
+               </div>
+
+               <div class="swiper-button-next"></div>
+               <div class="swiper-button-prev"></div>
+            </div>
+
+         </div>
+      </section>
+
+      <section class="section ">
+         <div class="wrapper">
+
+
+         </div>
+      </section>
+
+
+      <!-- <section class="section">
          <div class="wrapper">
             <div class="section__content">
-
                <picture loading="lazy" class="section__picture">
                   <source loading="lazy" srcset="" class="" alt="img">
                   <img loading="lazy" src="" class="" alt="img">
                </picture>
-
             </div>
          </div>
-      </section>
+      </section> -->
 
    </main>
    @@include("assets/html/footer.html",{})
