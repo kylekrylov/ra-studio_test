@@ -12,6 +12,7 @@
    @@include("assets/html/header.html",{ })
    @@include("assets/html/banner.html",{ })
    <main class="main">
+
       <section class="section our-series">
          <div class="wrapper">
             <div class="our-series__header">
@@ -25,7 +26,7 @@
                   Смотреть все
                </a>
             </div>
-            <div class="our-series__slider our-series-slider swiper-container">
+            <div class="swiper-container our-series__slider our-series-slider ">
                <ul class="swiper-wrapper our-series-slider__wrapper">
                   <li class="swiper-slide our-series-slider__slide">
                      <div class="our-series-slider__title">
@@ -55,12 +56,11 @@
                      </picture>
                   </li>
                </ul>
-               <div class="swiper-pagination"></div>
 
-               <div class="our-series-slider__scrollbar">
-                  <div class="swiper-scrollbar"></div>
+
+               <div class="our-series-slider__control">
+                  <div class="swiper-pagination"></div>
                </div>
-
                <div class="swiper-button-next"></div>
                <div class="swiper-button-prev"></div>
             </div>

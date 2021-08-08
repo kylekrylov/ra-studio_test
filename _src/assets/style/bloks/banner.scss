@@ -19,6 +19,7 @@ $heightSldBannerS: calc(100vh);
    &__slide {
       position: relative;
       width: 100%;
+      background: #f6f6f6;
    }
    &__slide-img {
       min-height: 340px;

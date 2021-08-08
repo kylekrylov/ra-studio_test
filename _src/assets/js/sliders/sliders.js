@@ -23,17 +23,26 @@ const sldBanner = document.querySelectorAll('.banner-hello').forEach(function (e
 const sldSeries = document.querySelectorAll('.our-series__slider').forEach(function (elem) {
    new Swiper(elem, {
       loop: true,
-      spaceBetween: 35,
-      grabCursor: true,
+      spaceBetween: 40,
       centeredSlides: true,
-      slidesPerView: "auto",
+
+      slidesPerView: 3,
+      pagination: {
+         el: ".swiper-pagination",
+         clickable: true,
+         renderBullet: function (index, className) {
+            return '<div class="' + className + '">' + '<span class="our-series-slide__pagination">' + '0' + (index + 1) + "</span>" + "</div>";
+         },
+
+      },
       scrollbar: {
          el: ".swiper-scrollbar",
          // hide: true,
       },
       navigation: {
-         nextEl: ".our-series .swiper-button-next",
-         prevEl: ".our-series .swiper-button-prev",
+         nextEl: ".swiper-button-next",
+         prevEl: ".swiper-button-prev",
       },
    });
 });
+
