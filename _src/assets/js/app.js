@@ -100,11 +100,6 @@ if (banner) {
 } else {
    header.classList.add('active');
 }
-let friend = 'друг';
-
-const anybody = {
-   friend: friend
-};
 
 
 
@@ -123,32 +118,23 @@ const anybody = {
 
 // Close the dropdown if the user clicks outside of it
 document.addEventListener('click', (event) => {
-   if (event.target.classList.contains('description__ball') || event.target.classList.contains('description__text') || event.target.classList.contains('description')) {
+
+   if (event.target.matches('.header__burger') || event.target.matches('.burger')) {
+      event.target.closest('.header__burger').classList.toggle('active');
+      event.target.closest('.header').querySelector('.header__menu').classList.toggle('active');
+      console.log('menu');
+   }
+   else {
       dropDescription.forEach((description) => {
          description.closest('.section__descriptions').querySelectorAll('.description').forEach((item) => {
             item.classList.remove('active');
          });
-         event.target.closest('.description').classList.add('active');
-         description.closest('.section__descriptions').querySelector('.description__title').classList.add('hidden');
       });
-      // console.log('description');
-   } else
-      if (event.target.matches('.header__menu-burger') || event.target.matches('.header__burger')) {
-         event.target.closest('.header__menu-burger').classList.toggle('active');
-         event.target.closest('.header').querySelector('.header__menu').classList.toggle('active');
-         // console.log('menu');
-      }
-      else {
-         dropDescription.forEach((description) => {
-            description.closest('.section__descriptions').querySelectorAll('.description').forEach((item) => {
-               item.classList.remove('active');
-            });
-         });
-         document.querySelector('.header__menu-burger').classList.remove('active');
-         document.querySelector('.header__menu').classList.remove('active');
-         // console.log('-');
+      document.querySelector('.header__burger').classList.remove('active');
+      document.querySelector('.header__menu').classList.remove('active');
+      // console.log('-');
 
-      }
+   }
 
    // console.log(event.target);
 });

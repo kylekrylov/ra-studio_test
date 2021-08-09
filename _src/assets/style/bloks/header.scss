@@ -14,9 +14,11 @@
    &.active {
       background: $white;
       transition: background 0.1s ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       & .header__logo svg {
          height: 50px;
-         transition: all 0.3s ease-in-out;
+         width: 90px;
+         transition: all 0.3s ease-in-out 0.1s;
       }
    }
    &__wrapper {
@@ -26,8 +28,17 @@
       margin: 0 auto;
       max-width: calc(1920px - 160px * 2);
       transition: $transitionLate;
+      // position: relative;
    }
 
+   &__logo svg {
+      transition: $transition;
+
+      @media (max-width: $max991) {
+         height: 50px;
+         width: 90px;
+      }
+   }
    &__menu {
       display: flex;
       justify-content: space-between;
@@ -38,6 +49,27 @@
       font-size: 14px;
       line-height: 17/14 * 100%;
       text-decoration: none;
+      @media (max-width: $max991) {
+         position: absolute;
+         top: 0;
+         right: 0;
+         background: $white;
+         display: flex;
+         flex-direction: column;
+         height: 100vh;
+         max-width: 100%;
+         transform: translateY(-20%);
+         opacity: 0;
+         visibility: hidden;
+         transition: $transitionFast;
+         &.active {
+            justify-content: space-evenly;
+            transform: translateY(0%);
+            visibility: visible;
+            opacity: 1;
+            transition: $transition;
+         }
+      }
    }
 
    &__menu-link {
@@ -54,8 +86,13 @@
       & > *:not(:last-child) {
          margin-right: 20px;
       }
+
+      @media (max-width: $max991) {
+         display: none;
+      }
    }
    &__tels {
+      font-weight: 600;
       font-size: 14px;
       line-height: 17/14 * 100%;
    }
@@ -65,5 +102,52 @@
       line-height: 17/14 * 100%;
       text-transform: uppercase;
       color: #00a2ce;
+      &:hover {
+         opacity: 0.8;
+         transition: $transition;
+      }
+   }
+   &__burger {
+      display: none;
+      @media (max-width: $max991) {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         align-self: center;
+         width: 30px;
+         height: 30px;
+         &:hover {
+            transition: $transition;
+            cursor: pointer;
+         }
+         & .burger {
+            position: relative;
+            background: $black;
+            width: 100%;
+            height: 2px;
+
+            &::before,
+            &::after {
+               position: absolute;
+               left: 50%;
+               transform: translateX(-50%);
+               content: "";
+
+               width: 100%;
+               height: 2px;
+               background: $black;
+               z-index: 10;
+            }
+
+            &::before {
+               bottom: 6px;
+            }
+            &::after {
+               top: 6px;
+               z-index: 999999;
+            }
+         }
+      }
    }
 }
