@@ -10,7 +10,7 @@ $heightSldBannerS: calc(100vh);
    @media (max-width: $max1280) {
       height: $heightSldBannerL;
    }
-   @media (max-width: $max768) {
+   @media (max-width: $max991) {
       height: $heightSldBannerS;
    }
    &__slider-wrapper {
@@ -29,7 +29,7 @@ $heightSldBannerS: calc(100vh);
       @media (max-width: $max1280) {
          height: $heightSldBannerM;
       }
-      @media (max-width: $max768) {
+      @media (max-width: $max991) {
          height: $heightSldBannerS;
       }
    }
@@ -51,7 +51,7 @@ $heightSldBannerS: calc(100vh);
       letter-spacing: 0.1em;
       margin-bottom: 30px;
       text-align: center;
-      @media (max-width: $max768) {
+      @media (max-width: $max991) {
          font-size: 28px;
       }
    }
@@ -71,6 +71,11 @@ $heightSldBannerS: calc(100vh);
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 100%;
+      padding: 20px;
+      & * {
+         max-width: 100%;
+      }
    }
 
    &__subtitle {
@@ -155,7 +160,7 @@ $heightSldBannerS: calc(100vh);
 //    height: 50px;
 //    border-radius: 50%;
 //    background: white;
-//    @media (max-width: $max768) {
+//    @media (max-width: $max991) {
 //       width: 28px;
 //       height: 28px;
 //    }
@@ -168,7 +173,7 @@ $heightSldBannerS: calc(100vh);
 //       background: black;
 //       border-radius: 1px;
 //       // transform: translate(0, 50%);
-//       @media (max-width: $max768) {
+//       @media (max-width: $max991) {
 //          width: 12px;
 //       }
 //    }
@@ -180,7 +185,7 @@ $heightSldBannerS: calc(100vh);
 //       border-right: 1px solid black;
 //       border-bottom: 1px solid black;
 //       border-radius: 1px;
-//       @media (max-width: $max768) {
+//       @media (max-width: $max991) {
 //          width: 6px;
 //          height: 6px;
 //       }
@@ -196,7 +201,7 @@ $heightSldBannerS: calc(100vh);
 //          height: 1px;
 //          background: white;
 //          border-radius: 1px;
-//          @media (max-width: $max768) {
+//          @media (max-width: $max991) {
 //             width: 12px;
 //          }
 //       }
@@ -208,7 +213,7 @@ $heightSldBannerS: calc(100vh);
 //          border-right: 1px solid white;
 //          border-bottom: 1px solid white;
 //          border-radius: 1px;
-//          @media (max-width: $max768) {
+//          @media (max-width: $max991) {
 //             width: 6px;
 //             height: 6px;
 //          }

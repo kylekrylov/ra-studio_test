@@ -1,4 +1,5 @@
 $max1920: 1919.98px;
+$max1600: 1599.98px;
 $max1280: 1139.98px;
 $max1140: 1139.98px;
 $max991: 990.98px;
@@ -158,6 +159,10 @@ $transitionLate: all 0.3s ease-in-out 0.3s;
    cursor: pointer;
    display: flex;
    align-items: center;
+   &:hover {
+      transition: $transition;
+      opacity: 0.8;
+   }
 }
 .input {
    border: none;

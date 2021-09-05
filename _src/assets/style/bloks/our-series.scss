@@ -4,7 +4,10 @@
    overflow: hidden;
 
    & .wrapper {
-      padding: 0 0 120px 0;
+      padding-bottom: 120px;
+      @media (max-width: $max1600) {
+         padding: 0 10px 120px;
+      }
    }
    &__header {
       display: flex;
@@ -12,12 +15,19 @@
       align-items: flex-start;
       max-width: 510px;
       margin-bottom: 70px;
+      @media (max-width: $max991) {
+         max-width: 100%;
+         margin: 0 auto 20px;
+      }
    }
    &__title {
       font-weight: bold;
       font-size: 48px;
       line-height: 110%;
       color: #2d2d2d;
+      @media (max-width: $max991) {
+         font-size: 32px;
+      }
    }
 
    &__text {
@@ -26,17 +36,25 @@
       font-size: 14px;
       line-height: 150%;
       color: #2d2d2d;
+      @media (max-width: $max991) {
+         margin-top: 16px;
+         font-size: 12px;
+         text-align: justify;
+      }
    }
    &__link-all {
-      margin-top: 40px;
+      margin-top: 20px;
       font-weight: 600;
       font-size: 14px;
       line-height: 17px;
       text-transform: uppercase;
       color: #00a8d0;
+      @media (max-width: $max991) {
+         font-size: 12px;
+         align-self: flex-end;
+      }
    }
    &__slider {
-      // padding: 120px 0;
       & > * {
       }
 
@@ -48,6 +66,11 @@
          // transform: translateY(-120px);
          transition: $transition;
          opacity: 0;
+         @media (max-width: $max991) {
+            transform: rotate(0deg);
+            max-width: 100%;
+            opacity: 1;
+         }
       }
       & .swiper-slide-prev {
          transition: $transition;
@@ -70,6 +93,9 @@
    position: relative;
    overflow: visible;
    transform: rotate(-12deg);
+   @media (max-width: $max991) {
+      transform: rotate(0deg);
+   }
    &__wrapper {
    }
    &__slide {
@@ -98,7 +124,12 @@
       display: flex;
       justify-content: center;
       align-items: flex-end;
-      z-index: 100;
+      z-index: 10;
+      @media (max-width: $max991) {
+         transform: translate(-50%, 0) rotate(0deg);
+
+         width: 100%;
+      }
       & .swiper-pagination {
          display: flex;
          // align-items: center;
@@ -152,6 +183,11 @@
       transform: rotate(12deg);
       border-radius: 50%;
       border: 2px solid $white;
+      @media (max-width: $max991) {
+         width: 60px;
+         height: 60px;
+         transform: rotate(0deg);
+      }
    }
 
    & .swiper-button-next {
