@@ -100,11 +100,6 @@ if (banner) {
 } else {
    header.classList.add('active');
 }
-let friend = 'друг';
-
-const anybody = {
-   friend: friend
-};
 
 
 
